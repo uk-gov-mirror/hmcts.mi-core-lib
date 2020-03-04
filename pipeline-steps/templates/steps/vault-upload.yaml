@@ -16,9 +16,9 @@ steps:
             # az keyvault secret set --name gov-uk-notify-api-key --vault-name ${{ parameters.azureVault }} --value $(GOV_NOTIFY_API_KEY)
             # az keyvault secret set --name mailing-targets --vault-name ${{ parameters.azureVault }} --value $MAILING_TARGETS  
             # az keyvault secret set --name ccdro-user --vault-name ${{ parameters.azureVault }} --value $CCD_RO_USER
-            az keyvault secret set --name mi-extraction-storage-connection-string --vault-name ${{ parameters.azureVault }} --value dummy
-            az keyvault secret set --name mi-landing-storage-connection-string --vault-name ${{ parameters.azureVault }} --value dummy
-
+            # az keyvault secret set --name mi-extraction-storage-connection-string --vault-name ${{ parameters.azureVault }} --value dummy
+            # az keyvault secret set --name mi-landing-storage-connection-string --vault-name ${{ parameters.azureVault }} --value dummy
+            az keyvault secret set --name mi-staging-storage-connection-string --vault-name ${{ parameters.azureVault }} --value dummy
    env:
         CCD_PASSWORD: $(CCD_RO_PASSWORD)
         APPINSIGHTS_KEY_VAR: $(APPINSIGHTS_INSTRUMENTATION_KEY)
