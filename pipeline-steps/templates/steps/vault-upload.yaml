@@ -19,8 +19,12 @@ steps:
             # az keyvault secret set --name mi-extraction-storage-connection-string --vault-name ${{ parameters.azureVault }} --value dummy
             # az keyvault secret set --name mi-landing-storage-connection-string --vault-name ${{ parameters.azureVault }} --value dummy
             # az keyvault secret set --name mi-staging-storage-connection-string --vault-name ${{ parameters.azureVault }} --value dummy
+            az keyvault secret set --name mi-support-email --vault-name ${{ parameters.azureVault }} --value $SUPPORT_EMAIL
+
+            mi-support-email
    env:
         CCD_PASSWORD: $(CCD_RO_PASSWORD)
         APPINSIGHTS_KEY_VAR: $(APPINSIGHTS_INSTRUMENTATION_KEY)
         ARCHIVE_PASSWORD_VAR: $(ARCHIVE_PASSWORD)
         GOV_NOTIFY_API_KEY_VAR: $(GOV_NOTIFY_API_KEY)
+        SUPPORT_EMAIL_VAR: $(SUPPORT_EMAIL)
