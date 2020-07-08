@@ -15,7 +15,8 @@ steps:
             # az keyvault secret set --name gov-uk-notify-api-key --vault-name ${{ parameters.azureVault }} --value $(GOV_NOTIFY_API_KEY)
             # az keyvault secret set --name mailing-targets --vault-name ${{ parameters.azureVault }} --value $(MAILING_TARGETS)  
             # az keyvault secret set --name ccdro-user --vault-name ${{ parameters.azureVault }} --value $(CCD_RO_USER)
-            az keyvault secret set --name mi-support-email --vault-name ${{ parameters.azureVault }} --value $(MI_SUPPORT_EMAIL)
+            az keyvault secret set --name ccdro-clone-user --vault-name ${{ parameters.azureVault }} --value ccdro_user@ccd-data-store-api-postgres-db-prod-replica
+            az keyvault secret set --name ccdro-clone-password --vault-name ${{ parameters.azureVault }} --value DUMMY
 
    env:
         CCD_PASSWORD: $(CCD_RO_PASSWORD)
