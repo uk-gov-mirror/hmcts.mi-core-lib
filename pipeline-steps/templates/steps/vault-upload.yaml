@@ -11,7 +11,7 @@ steps:
           azureSubscription: ${{ parameters.azureSubscriptionEndpoint }}
           scriptLocation: "inlineScript"
           inlineScript: |
-            if [ -z "$expected" ]; then
+            if [ -z "$(${{ pair.env_var_name }})" ]; then
                 echo 'Variable not set'
             else
               seachedSecret=$(az keyvault secret list --vault-name ${{ parameters.azureVault }}  --query "[?name=='${{ pair.secret_name }}'].name" -o tsv)
