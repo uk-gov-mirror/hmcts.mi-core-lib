@@ -21,9 +21,7 @@ steps:
                    az keyvault secret set --name ${{ pair.secret_name }} --vault-name ${{ parameters.azureVault }}  --value '$(${{ pair.env_var_name }})'
               else
                   currentValue=$(az keyvault secret show --vault-name ${{ parameters.azureVault }} --name ${{ pair.secret_name }} --query 'value' -o tsv)
-                  echo "$varValue current"
                   if [ "$varValue" = "$currentValue" ]; then
-                      echo "$currentValue Secret has not changed. Skipped"
                       az keyvault secret set --name ${{ pair.secret_name }} --vault-name ${{ parameters.azureVault }}  --value '$(${{ pair.env_var_name }})'
                   else
                       az keyvault secret set --name ${{ pair.secret_name }} --vault-name ${{ parameters.azureVault }}  --value '$(${{ pair.env_var_name }})'
